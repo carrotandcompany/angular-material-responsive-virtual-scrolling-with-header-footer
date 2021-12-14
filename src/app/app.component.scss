@@ -1,0 +1,79 @@
+.example-viewport {
+  height: calc(100vh - 56px); // we substract the height of the navbar
+}
+
+::ng-deep {
+
+
+  .cdk-virtual-scroll-content-wrapper {
+    margin-top: 10px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; // 3 col
+
+    row-gap: 10px; // <-- this needs to be the same as rowGap
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr 1fr; // 2 col
+    }
+    @media (max-width: 500px) {
+      grid-template-columns: 1fr; // 1 col
+    }
+
+    .scroll-footer,
+    .scroll-header {
+      font-family: Roboto, 'Helvetica Neue', sans-serif;
+    }
+
+    .scroll-header {
+      padding: 0 10px;
+      textarea {
+        width: 100%;
+      }
+
+      grid-column-start: 1;
+      grid-column-end: 4;
+
+      @media (max-width: 900px) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+      @media (max-width: 500px) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+    }
+
+    .scroll-footer {
+      padding: 0 10px;
+      background-color: rgb(75, 75, 75);
+      color: white;
+      textarea {
+        background-color: #c7c7c7;
+        width: 100%;
+      }
+
+      grid-column-start: 1;
+      grid-column-end: 4;
+
+      @media (max-width: 900px) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+      @media (max-width: 500px) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+      }
+    }
+  }
+}
+
+.example-item {
+  height: 120px; // <-- this needs to be the same as singleItemSize
+
+  overflow: hidden;
+  .example-card {
+    margin: 0 10px;
+    background-color: rgb(227, 227, 236);
+  }
+}
