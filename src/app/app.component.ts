@@ -9,7 +9,7 @@ import {
   VERSION,
   ViewChild,
 } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
@@ -20,7 +20,7 @@ import { takeUntil } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  items:any[] = [];
+  items: any[] = [];
   destroy$ = new Subject<void>();
   tabletScreen = false;
   mobileScreen = false;
@@ -35,11 +35,14 @@ export class AppComponent {
   rowSize = this.singleItemSize + this.rowGap;
 
   @ViewChild('virtualScrolling') virtualScrolling: any;
+  @ViewChild('scrollViewport') scrollViewport: any;
+  @ViewChild('wrapper') wrapper: any;
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
   ) {
+
     this.setNumItems(100);
     this.rowSize = this.singleItemSize + this.rowGap;
     breakpointObserver
@@ -71,7 +74,7 @@ export class AppComponent {
   }
 
   setNumItems(numItems: number) {
-    this.items = Array.from({ length: numItems }).map((_, i) => `Item #${i}`);
+    this.items = Array.from({length: numItems}).map((_, i) => `Item #${i}`);
   }
 
   ngOnDestroy() {

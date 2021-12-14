@@ -16,6 +16,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MyVirtualScrollViewport } from './my-scrolling';
 import { GetHeightDirective } from './get-height.directive';
 import { DebugComponent } from './debug.component';
+import { WrapperComponent } from './wrapper/wrapper.component';
 
 @NgModule({
   imports: [
@@ -37,6 +38,7 @@ import { DebugComponent } from './debug.component';
     MyVirtualScrollViewport,
     GetHeightDirective,
     DebugComponent,
+    WrapperComponent,
   ],
   bootstrap: [AppComponent],
 })

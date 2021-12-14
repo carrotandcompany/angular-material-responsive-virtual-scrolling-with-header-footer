@@ -1,3 +1,4 @@
+<script src="app.component.ts"></script>
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span>Virtual Scrolling w Header Demo</span>
@@ -10,6 +11,7 @@
   [footerHeight]="footerHeight"
   [cols]="cols"
   #virtualScrolling="virtualScrollingOffset"
+  #scrollViewport
   class="example-viewport"
 >
   <div
@@ -25,18 +27,7 @@
     <textarea>Some random text of random size goes here...</textarea>
     <p>Lorem ipsum bla bla text is comming here</p>
   </div>
-  <div *cdkVirtualFor="let item of items" class="example-item">
-    <mat-card class="example-card">
-      <mat-card-title-group>
-        <mat-card-title>{{ item }}</mat-card-title>
-        <mat-card-subtitle>Subtitle for {{ item }}</mat-card-subtitle>
-        <mat-icon aria-hidden="false" aria-label="Example icon"
-          >info_outline</mat-icon
-        >
-      </mat-card-title-group>
-      <mat-card-content> More text on item {{ item }} </mat-card-content>
-    </mat-card>
-  </div>
+    <wrapper [items]="items" #wrapper></wrapper>
   <div
     class="scroll-footer"
     calcHeight

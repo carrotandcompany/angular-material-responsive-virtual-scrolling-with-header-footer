@@ -1,0 +1,15 @@
+<div class="elements-container">
+  <div *cdkVirtualFor="let item of items" class="example-item">
+      <mat-card class="example-card">
+        <mat-card-title-group>
+          <mat-card-title>{{ item }}</mat-card-title>
+          <mat-card-subtitle>Subtitle for {{ item }}</mat-card-subtitle>
+          <mat-icon aria-hidden="false" aria-label="Example icon"
+          >info_outline
+          </mat-icon
+          >
+        </mat-card-title-group>
+        <mat-card-content> More text on item {{ item }} </mat-card-content>
+      </mat-card>
+    </div>
+</div>

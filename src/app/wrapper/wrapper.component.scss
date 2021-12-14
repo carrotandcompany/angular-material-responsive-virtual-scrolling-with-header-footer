@@ -1,0 +1,25 @@
+
+ .elements-container {
+   margin:0;
+   max-width: 100%;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr; // 3 col
+
+   row-gap: 10px; // <-- this needs to be the same as rowGap
+
+   @media (max-width: 900px) {
+     grid-template-columns: 1fr 1fr; // 2 col
+   }
+   @media (max-width: 500px) {
+     grid-template-columns: 1fr; // 1 col
+   }
+ }
+.example-item {
+  height: 120px; // <-- this needs to be the same as singleItemSize
+
+  overflow: hidden;
+  .example-card {
+    margin: 0 10px;
+    background-color: rgb(227, 227, 236);
+  }
+}

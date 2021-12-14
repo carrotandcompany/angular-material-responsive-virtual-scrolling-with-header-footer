@@ -2,3 +2,7 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// align raised button in form field suffix
+.set-num-items .mat-form-field-suffix {
+  top: -4px !important;
+}
